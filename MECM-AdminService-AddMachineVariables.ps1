@@ -75,13 +75,10 @@ $cmprovider = "srv01.SofieKnull.lab"
 $SiteCode="PS1"
 
 
-
+# Create new Device
 $machine = Invoke-RestMethod -Method Post -Uri https://$($CMProvider)/AdminService/wmi/SMS_Site.ImportMachineEntry -Body "{`"NetbiosName`": `"$devicename`", `"MACAddress`": `"$mac`"}" -ContentType 'application/json' -Credential $Cred
 
-#Beispiel nur 1 Var
-#$vars = @{"CU_Country"="CH"}
-
-
+#Machine Variables to be added to Device
 $vars = @{"CU_Domain"="SofieKnull.lab";`
           "CU_City"="ZRH";`
           "CU_Country"="CH";`
